@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables (you won't need these yet)
+.env
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+*.log
