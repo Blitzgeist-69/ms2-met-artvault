@@ -178,7 +178,7 @@ The wireframes show:
 * Balsamiq - Wireframes
 * Met Museum Collection API
 * Squoosh.app - Wireframe image resize for Previews
-* favicon.io - Conversion of Font Awesome icon to favicon
+* favicon.io - Favicon creation
 * Visual Studio - Emmet and Prettier Extensions
 * W3C Markup Validation Service
 * W3C CSS Validation Service
