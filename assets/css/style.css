@@ -1,0 +1,46 @@
+:root {
+    /* Light Mode */
+    --bg-color: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text-primary: #1E2937;
+    --text-secondary: #64748B;
+    --accent: #D97706;
+    --accent-hover: #B45309;
+    --border-color: #E2E8F0;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode */
+    --bg-color: #0F172A;
+    --card-bg: #1E2937;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --accent: #F59E0B;
+    --accent-hover: #D97706;
+    --border-color: #334155;
+}
+
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+}
