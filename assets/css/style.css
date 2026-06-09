@@ -25,6 +25,7 @@ body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,9 +39,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-accent {
     background-color: var(--accent);
-    color: white;
+    color: var(--text-primary);
 }
 
 .btn-accent:hover {
     background-color: var(--accent-hover);
 }
+
+/* Navbar background and border */
+.navbar {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+/* Logo and link text color */
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--text-primary);
+}
+
+/* Link hover color */
+.navbar .nav-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Bordered links container */
+.nav-links-box {
+    border-color: var(--border-color);
+}
+
+
