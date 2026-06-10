@@ -36,6 +36,29 @@ function toggleDarkMode() {
 
 const BASE_URL = "https://collectionapi.metmuseum.org/public/collection/v1";
 
+// Search for objects by query
+
+async function searchArtworks(query) {
+    if (!query || query.trim() === "") return [];
+
+    try {
+        const searchUrl = `${BASE_URL}/search?hasImages=true&q=${encodeURIComponent(query)}`;
+        const searchResponse = await fetch(searchUrl);
+        const searchData = await searchResponse.json();
+
+        if (!searchData.objectIDs || searchData.objectIDs.length === 0) {
+            return [];
+        }
+
+        const ids = searchData.objectIDs.slice(0, 24);
+        const results = await Promise.all(ids.map(id => fetchObjectById(id)));
+        return results.filter(art => art !== null);
+    } catch (error) {
+        console.error("Search Failed:", error);
+        throw error;
+    }
+}
+
 // Fetch object details by ID
 
 async function fetchObjectById(objectID) {
