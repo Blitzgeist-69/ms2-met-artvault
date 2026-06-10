@@ -7,6 +7,8 @@ The application demonstrates modern front-end development practices including re
 
 **Hero Image** **<span style="color: red;">TBC</span>**
 
+**Live Site** https://blitzgeist-69.github.io/ms2-met-artvault/
+
 ## Project Description
 
 Met Art Vault is a single-page application (SPA) designed to provide an intuitive and engaging way for art enthusiasts, students, and casual browsers to discover and curate artworks from The Met’s open collection of over 470,000 pieces.
@@ -33,7 +35,7 @@ This project showcases core front-end skills including:
 
 **Live Site:**
 
-**<span style="color: red;">TBC</span>**
+https://blitzgeist-69.github.io/ms2-met-artvault/
 
 **GitHub Repo:**
 
