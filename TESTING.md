@@ -31,3 +31,13 @@ Example "Sunflowers" search
 Search with 'spaces' included
 
 ![Search with spaces included](assets/screenshots/search-with-spaces.png)
+
+#### createCard(artwork)
+
+Test Code
+
+![Test Code](assets/screenshots/test-code-create-card.png)
+
+Test Code Result
+
+![Test Code Result](assets/screenshots/test-code-create-card-result.png)

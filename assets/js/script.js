@@ -85,6 +85,32 @@ async function fetchObjectById(objectID) {
     }
 }
 
+// Render artwork cards
+
+function createCard(artwork) {
+    const col = document.createElement("div");
+    col.className = "col";
+
+    col.innerHTML = `
+        <div class="card h-100 shadow-sm artwork-card" style="cursor: pointer;">
+            <img src="${artwork.image}" class="card-img-top" alt="${artwork.title}" 
+                 style="height: 200px; object-fit: cover;"
+                 onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+            <div class="card-body">
+                <h5 class="card-title">${artwork.title}</h5>
+                <p class="card-text text-muted">${artwork.artist} - ${artwork.date}</p>
+            </div>
+        </div>
+    `;
+
+    const cardElement = col.querySelector(".artwork-card");
+    cardElement.addEventListener("click", () => {
+        showArtworkModal(artwork);
+    });
+
+    return col;
+}
+
 // Initialise
 
 function init() {
@@ -102,3 +128,13 @@ function init() {
 
 // Run init on page load
 document.addEventListener("DOMContentLoaded", init);
+
+const testArtwork = {
+    title: "Test Painting",
+    artist: "Test Artist",
+    date: "2020",
+    image: "https://picsum.photos/200"
+};
+const testCard = createCard(testArtwork);
+document.getElementById("results").appendChild(testCard);
+console.log("Test card created:");

@@ -193,6 +193,7 @@ The wireframes show:
 * Google Lighthouse
 * Notepad++
 * tabletomarkdown.com
+* Lorem Picsum - test image
 
 
 ## Code and Media Attribution
