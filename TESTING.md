@@ -72,4 +72,28 @@ Successful Search
 
 Something Went Wrong - No internet connection
 
-![Somethin went wrong](assets/screenshots/something-wrong.png)
+![Something went wrong](assets/screenshots/something-wrong.png)
+
+#### Suprise Me!
+
+Some returned object IDs do not exist
+
+![Suprise Me - Klimt](assets/screenshots/suprise-me-klimt.png)
+
+All returned object IDs exist
+
+![Suprise Me - Gauguin](assets/screenshots/suprise-me-gauguin.png)
+
+#### Art Vault
+
+Empty Vault
+
+![Empty Vault](assets/screenshots/empty-vault.png)
+
+View Art Vault contents
+
+![View Art Vault contents](assets/screenshots/art-vault-contents.png)
+
+New favourite added
+
+![New favourite added](assets/screenshots/new-favourite-added.png)

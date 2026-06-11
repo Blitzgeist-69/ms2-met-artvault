@@ -64,6 +64,7 @@ Key strategic decisions included:
 * Dynamic display of search results using responsive Bootstrap cards
 * Interactive modal displaying detailed artwork information (artist, date, medium, department)
 * Ability to save and remove artworks to/from a personal Art Vault using localStorage
+* Ability to view Art Vault contents
 * Fullscreen image viewing when clicking on an artwork image in the modal
 * Dark mode toggle with preference saved in localStorage
 * Fully responsive design optimised for mobile, tablet, and desktop devices
@@ -155,6 +156,7 @@ The wireframes show:
 * As a user, I want to view search results displayed as cards containing an image, title, and artist so that I can quickly browse through artworks.
 * As a user, I want to click on an artwork card to view more detailed information in a modal so that I can learn more about the piece.
 * As a user, I want the website to be fully responsive on mobile, tablet, and desktop devices so that I can comfortably use it on any screen size.
+* As a user, I want to view all the artworks I have saved in my personal Art Vault, so that I can easily browse and revisit my favourite pieces.
 
 **Should Have**
 
@@ -217,7 +219,7 @@ Met Museum Collection API Public Domain art works
 ### Deployment Steps
 
 1. Log in to your GitHub account and navigate to the repository:  
-   **<span style="color: red;">TBC</span>**
+   https://github.com/Blitzgeist-69/ms2-met-artvault
 2. Click on **Settings** (top right of the repository).
 3. In the left sidebar, scroll down and click **Pages**.
 4. Under **Source**, select **Deploy from a branch**.
@@ -229,7 +231,7 @@ Met Museum Collection API Public Domain art works
 ### Live Site
 
 The website is live and can be viewed here:  
-**<span style="color: red;">TBC</span>**
+https://blitzgeist-69.github.io/ms2-met-artvault/
 
 
 ### Local Deployment

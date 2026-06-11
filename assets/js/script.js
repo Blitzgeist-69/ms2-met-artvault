@@ -258,6 +258,29 @@ async function showRandomArtwork() {
     }
 }
 
+// Show saved artworks in vault
+
+function showMyVault() {
+    const vault = JSON.parse(localStorage.getItem("artvault")) || [];
+    const resultsContainer = document.getElementById("results");
+
+    resultsContainer.innerHTML = "";
+
+    if (vault.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <p class="lead">Your Art Vault is empty. Save some artworks first!</p>
+            </div>
+        `;
+        return;
+    }
+
+    vault.forEach((artwork) => {
+        const card = createCard(artwork);
+        resultsContainer.appendChild(card);
+    });
+}
+
 // Initialise
 
 function init() {
@@ -280,6 +303,21 @@ function init() {
     const randomBtn = document.getElementById("random-btn");
     if (randomBtn) {
         randomBtn.addEventListener("click", showRandomArtwork);
+    }
+
+    // Connect Save to Vault button
+    const saveButton = document.getElementById("save-to-vault");
+    if (saveButton) {
+        saveButton.addEventListener("click", saveCurrentArtworkToVault);
+    }
+
+    // Connect vault button
+    const artVaultLink = document.getElementById("art-vault-link");
+    if (artVaultLink) {
+        artVaultLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            showMyVault();
+        });
     }
 
     // Mobile navbar collapses after clicking a link
