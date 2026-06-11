@@ -132,6 +132,24 @@ function createCard(artwork) {
     return col;
 }
 
+// Show artwork details in a modal
+
+function showArtworkModal(artwork) {
+    currentArtwork = artwork;
+
+    document.getElementById("modal-title").textContent = artwork.title;
+    document.getElementById("modal-image").src = artwork.largeImage || artwork.image;
+    document.getElementById("modal-image").alt = artwork.title;
+    document.getElementById("modal-artist").textContent = artwork.artist;
+    document.getElementById("modal-date").textContent = artwork.date;
+    document.getElementById("modal-medium").textContent = artwork.medium;
+    document.getElementById("modal-department").textContent = artwork.department;
+
+    const modalElement = document.getElementById("artModal");
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+}
+
 // Initialise
 
 function init() {
