@@ -1,37 +1,44 @@
 :root {
     /* Light Mode */
-    --bg-color: #F8FAFC;
-    --card-bg: #FFFFFF;
-    --text-primary: #1E2937;
-    --text-secondary: #64748B;
-    --accent: #D97706;
-    --accent-hover: #B45309;
-    --border-color: #E2E8F0;
-    --btn-text: #FFFFFF;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e2937;
+    --text-secondary: #64748b;
+    --accent: #d97706;
+    --accent-hover: #b45309;
+    --border-color: #e2e8f0;
+    --btn-text: #ffffff;
 }
 
 [data-theme="dark"] {
     /* Dark Mode */
-    --bg-color: #0F172A;
-    --card-bg: #1E2937;
-    --text-primary: #F1F5F9;
-    --text-secondary: #94A3B8;
-    --accent: #F59E0B;
-    --accent-hover: #D97706;
+    --bg-color: #0f172a;
+    --card-bg: #1e2937;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent: #f59e0b;
+    --accent-hover: #d97706;
     --border-color: #334155;
-    --btn-text: #FFFFFF;
+    --btn-text: #ffffff;
 }
-
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
-
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
 }
 
 .card {
@@ -75,5 +82,3 @@ h1, h2, h3, h4, h5, h6 {
 .nav-links-box {
     border-color: var(--border-color);
 }
-
-

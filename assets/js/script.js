@@ -51,8 +51,8 @@ async function searchArtworks(query) {
         }
 
         const ids = searchData.objectIDs.slice(0, 24);
-        const results = await Promise.all(ids.map(id => fetchObjectById(id)));
-        return results.filter(art => art !== null);
+        const results = await Promise.all(ids.map((id) => fetchObjectById(id)));
+        return results.filter((art) => art !== null);
     } catch (error) {
         console.error("Search Failed:", error);
         throw error;
@@ -78,7 +78,7 @@ async function fetchObjectById(objectID) {
             image: data.primaryImageSmall || data.primaryImage || "",
             largeImage: data.primaryImage || data.primaryImageSmall || "",
             medium: data.medium || "Medium unknown",
-            department: data.department || "Department unknown"
+            department: data.department || "Department unknown",
         };
     } catch {
         return null;
@@ -91,7 +91,7 @@ function renderArtworks(artworks) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = "";
 
-    const validArtworks = artworks.filter(art => art && art.image);
+    const validArtworks = artworks.filter((art) => art && art.image);
 
     if (validArtworks.length === 0) {
         resultsContainer.innerHTML = `
@@ -102,7 +102,7 @@ function renderArtworks(artworks) {
         return;
     }
 
-    validArtworks.forEach(artwork => {
+    validArtworks.forEach((artwork) => {
         const card = createCard(artwork);
         resultsContainer.appendChild(card);
     });
@@ -119,7 +119,7 @@ function createCard(artwork) {
                  onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
             <div class="card-body">
                 <h5 class="card-title">${artwork.title}</h5>
-                <p class="card-text text-muted">${artwork.artist} - ${artwork.date}</p>
+                <p class="card-text">${artwork.artist} - ${artwork.date}</p>
             </div>
         </div>
     `;
@@ -144,7 +144,17 @@ function init() {
         darkModeToggle.addEventListener("click", toggleDarkMode);
     }
 
-    
+    // Mobile navbar collapses after clicking a link
+    document
+        .querySelectorAll(".navbar-collapse .nav-link, .nav-links-box button")
+        .forEach((element) => {
+            element.addEventListener("click", () => {
+                const navbarCollapse = document.querySelector(".navbar-collapse");
+                if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+                    navbarCollapse.classList.remove("show");
+                }
+            });
+        });
 }
 
 // Run init on page load
@@ -154,7 +164,7 @@ const testArtwork = {
     title: "Test Painting",
     artist: "Test Artist",
     date: "2020",
-    image: "https://picsum.photos/200"
+    image: "https://picsum.photos/200",
 };
 const testCard = createCard(testArtwork);
 document.getElementById("results").appendChild(testCard);
