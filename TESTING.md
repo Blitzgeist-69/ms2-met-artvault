@@ -45,3 +45,17 @@ Test Code Result
 #### renderArtworks
 
 ![Test renderArtworks](assets/screenshots/test-render-artworks.png)
+
+#### saveCurrentArtworkToVault
+
+Confirming artwork saved to localStorage
+
+![Artwork saved to localStorage](assets/screenshots/artwork-saved.png)
+
+Saving current artwork
+
+![Saving current artwork](assets/screenshots/saving-current-artwork.png)
+
+Artwork already saved
+
+![Artwork already saved](assets/screenshots/artwork-already-saved.png)

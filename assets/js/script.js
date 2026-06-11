@@ -134,6 +134,8 @@ function createCard(artwork) {
 
 // Show artwork details in a modal
 
+let currentArtwork = null;
+
 function showArtworkModal(artwork) {
     currentArtwork = artwork;
 
@@ -148,6 +150,28 @@ function showArtworkModal(artwork) {
     const modalElement = document.getElementById("artModal");
     const modal = new bootstrap.Modal(modalElement);
     modal.show();
+}
+
+// Save artwork to vault
+
+function saveCurrentArtworkToVault() {
+    if (!currentArtwork) return;
+
+    let vault = JSON.parse(localStorage.getItem("artvault")) || [];
+
+    const alreadyExists = vault.some(item => item.id === currentArtwork.id);
+    if (alreadyExists) {
+        alert("This artwork is already in your Vault!");
+        return;
+    }
+
+    vault.push(currentArtwork);
+    localStorage.setItem("artvault", JSON.stringify(vault));
+
+    const modalElement = document.getElementById("artModal");
+    bootstrap.Modal.getInstance(modalElement).hide();
+
+    alert("Artwork saved to your Vault!");
 }
 
 // Initialise
