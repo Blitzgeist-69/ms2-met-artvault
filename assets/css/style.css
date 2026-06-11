@@ -41,6 +41,8 @@ h6 {
     font-family: "Poppins", sans-serif;
 }
 
+/* Card styles */
+
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -53,6 +55,28 @@ h6 {
 .card .card-text {
     color: var(--text-primary);
 }
+
+/* Modal styles */
+
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.modal-title {
+    color: var(--text-primary);
+}
+
+.modal-body p {
+    color: var(--text-primary);
+}
+
+.modal-body strong {
+    color: var(--text-primary);
+}
+
+/* Accent button styles */
 
 .btn-accent {
     background-color: var(--accent);
@@ -76,17 +100,20 @@ h6 {
 }
 
 /* Logo and link text color */
+
 .navbar .navbar-brand,
 .navbar .nav-link {
     color: var(--btn-text);
 }
 
 /* Link hover color */
+
 .navbar .nav-link:hover {
     color: var(--btn-text);
 }
 
 /* Bordered links container */
+
 .nav-links-box {
     border-color: var(--border-color);
 }
