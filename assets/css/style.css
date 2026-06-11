@@ -46,6 +46,14 @@ h6 {
     border: 1px solid var(--border-color);
 }
 
+.card .card-title {
+    color: var(--text-primary);
+}
+
+.card .card-text {
+    color: var(--text-primary);
+}
+
 .btn-accent {
     background-color: var(--accent);
     color: var(--btn-text);
