@@ -87,6 +87,27 @@ async function fetchObjectById(objectID) {
 
 // Render artwork cards
 
+function renderArtworks(artworks) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "";
+
+    const validArtworks = artworks.filter(art => art && art.image);
+
+    if (validArtworks.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="col-12 text-center py-5 text-muted">
+                <p class="lead">No artworks with images found. Try a different search.</p>
+            </div>
+        `;
+        return;
+    }
+
+    validArtworks.forEach(artwork => {
+        const card = createCard(artwork);
+        resultsContainer.appendChild(card);
+    });
+}
+
 function createCard(artwork) {
     const col = document.createElement("div");
     col.className = "col";
