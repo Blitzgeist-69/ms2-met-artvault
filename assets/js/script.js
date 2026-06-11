@@ -204,6 +204,60 @@ async function handleSearch(e) {
     }
 }
 
+// Suprise Me! - Load a random artwork on page load
+
+async function showRandomArtwork() {
+    const suggestions = [
+        "van gogh",
+        "rubens",
+        "rodin",
+        "frans hals",
+        "rembrandt",
+        "degas",
+        "michelangelo",
+        "caravaggio",
+        "velazquez",
+        "raphael",
+        "el greco",
+        "goya",
+        "ingres",
+        "vermeer",
+        "delacroix",
+        "manet",
+        "titian",
+        "courbet",
+        "gauguin",
+        "renoir",
+        "pissarro",
+        "cezanne",
+        "gauguin",
+        "klimt",
+        "modigliani",
+        "donatello",
+        "schiele",
+    ];
+    const randomQuery = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+    document.getElementById("search-input").value = randomQuery;
+
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = `
+        <div class="col-12 text-center py-5">
+            <div class="spinner-border text-primary"></div>
+            <p class="mt-3">Finding your suprise!...</p>
+        </div>
+    `;
+
+    try {
+        const artworks = await searchArtworks(randomQuery);
+        if (artworks.length > 0) {
+            renderArtworks(artworks);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 // Initialise
 
 function init() {
@@ -222,6 +276,12 @@ function init() {
         searchForm.addEventListener("submit", handleSearch);
     }
 
+    // Connect Suprise Me! button
+    const randomBtn = document.getElementById("random-btn");
+    if (randomBtn) {
+        randomBtn.addEventListener("click", showRandomArtwork);
+    }
+
     // Mobile navbar collapses after clicking a link
     document
         .querySelectorAll(".navbar-collapse .nav-link, .nav-links-box button")
@@ -237,5 +297,3 @@ function init() {
 
 // Run init on page load
 document.addEventListener("DOMContentLoaded", init);
-
-
