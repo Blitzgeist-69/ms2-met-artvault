@@ -5,7 +5,9 @@
 Met Art Vault is an interactive front-end web application that allows users to explore the vast collection of The Metropolitan Museum of Art. This project enables users to search through thousands of public domain artworks, view detailed information, and build a personal collection by saving their favourite pieces to a virtual "Art Vault".
 The application demonstrates modern front-end development practices including responsive design, dynamic content rendering, client-side data persistence, and integration with a third-party public API.
 
-**Hero Image** **<span style="color: red;">TBC</span>**
+**Hero Image** 
+
+![Hero Image](assets/screenshots/hero-image.png)
 
 **Live Site** https://blitzgeist-69.github.io/ms2-met-artvault/
 
@@ -71,6 +73,7 @@ Key strategic decisions included:
 * Loading states and error handling during API calls
 * “Surprise Me!” button to discover random artworks
 * Clean, accessible, and maintainable code structure
+* About button gives information about the Met Art Vault website
 
 **Out of Scope**
 
@@ -163,6 +166,7 @@ The wireframes show:
 * As a user, I want to save artworks to my personal Art Vault and receive clear visual feedback so that I can build and revisit my own collection of favourite artworks.
 * As a user, I want to remove artworks from my Art Vault and receive clear visual feedback so that I can manage my saved collection effectively.
 * As a user, I want the option to switch to dark mode so that I can browse comfortably in low-light environments.
+* As a user, I want to click on the "About" link in the navigation bar to open a modal with information about the Met Art Vault website, so that I can understand the purpose of the site and what it offers.
 
 **Could Have**
 

@@ -281,6 +281,24 @@ function showMyVault() {
     });
 }
 
+// Reset to home view
+
+function resetToHome() {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "";
+
+    resultsContainer.innerHTML = `
+        <div class="col-12 text-center" id="placeholder">
+            <p class="lead text-center">
+                Use the search bar or "Surprise Me!" to explore artworks.
+            </p>
+        </div>
+    `;
+
+    const searchInput = document.getElementById("search-input");
+    if (searchInput) searchInput.value = "";
+}
+
 // Initialise
 
 function init() {
@@ -317,6 +335,25 @@ function init() {
         artVaultLink.addEventListener("click", (e) => {
             e.preventDefault();
             showMyVault();
+        });
+    }
+
+    // Home link and logo reload page
+
+    const homeLink = document.getElementById("home-link");
+    const logo = document.getElementById("logo");
+
+    if (homeLink) {
+        homeLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            resetToHome();
+        });
+    }
+
+    if (logo) {
+        logo.addEventListener("click", (e) => {
+            e.preventDefault();
+            resetToHome();
         });
     }
 

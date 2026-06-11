@@ -97,3 +97,21 @@ View Art Vault contents
 New favourite added
 
 ![New favourite added](assets/screenshots/new-favourite-added.png)
+
+#### Reset page clicking Home or "Met Art Vault"
+
+Before Reset with Home
+
+![Before Reset with Home](assets/screenshots/before-home-reset.png)
+
+After Reset with Home
+
+![After Reset with Home](assets/screenshots/after-home-reset.png)
+
+Before Reset with Logo
+
+![Before Reset with Logo](assets/screenshots/before-logo-reset.png)
+
+After Reset with Logo
+
+![After Reset with Logo](assets/screenshots/after-logo-reset.png)
