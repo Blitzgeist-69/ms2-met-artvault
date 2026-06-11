@@ -59,3 +59,17 @@ Saving current artwork
 Artwork already saved
 
 ![Artwork already saved](assets/screenshots/artwork-already-saved.png)
+
+#### Search
+
+No results
+
+![No Search Results](assets/screenshots/no-search-results.png)
+
+Successful Search
+
+![Successful Search](assets/screenshots/successful-search.png)
+
+Something Went Wrong - No internet connection
+
+![Somethin went wrong](assets/screenshots/something-wrong.png)

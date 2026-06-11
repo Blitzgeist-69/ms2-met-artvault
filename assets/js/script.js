@@ -1,3 +1,5 @@
+/* global bootstrap */
+
 // Dark Mode
 
 // Load saved theme preference on page load
@@ -95,7 +97,7 @@ function renderArtworks(artworks) {
 
     if (validArtworks.length === 0) {
         resultsContainer.innerHTML = `
-            <div class="col-12 text-center py-5 text-muted">
+            <div class="col-12 text-center py-5">
                 <p class="lead">No artworks with images found. Try a different search.</p>
             </div>
         `;
@@ -159,7 +161,7 @@ function saveCurrentArtworkToVault() {
 
     let vault = JSON.parse(localStorage.getItem("artvault")) || [];
 
-    const alreadyExists = vault.some(item => item.id === currentArtwork.id);
+    const alreadyExists = vault.some((item) => item.id === currentArtwork.id);
     if (alreadyExists) {
         alert("This artwork is already in your Vault!");
         return;
@@ -174,6 +176,34 @@ function saveCurrentArtworkToVault() {
     alert("Artwork saved to your Vault!");
 }
 
+// Handle search form submission
+
+async function handleSearch(e) {
+    e.preventDefault();
+
+    const query = document.getElementById("search-input").value.trim();
+    if (!query) return;
+
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = `
+        <div class="col-12 text-center py-5">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-3">Searching the collection...</p>
+        </div>
+    `;
+
+    try {
+        const artworks = await searchArtworks(query);
+        renderArtworks(artworks);
+    } catch (error) {
+        resultsContainer.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <p>Something went wrong. Please try again.</p>
+            </div>
+        `;
+    }
+}
+
 // Initialise
 
 function init() {
@@ -184,6 +214,12 @@ function init() {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", toggleDarkMode);
+    }
+
+    // Connect search form
+    const searchForm = document.getElementById("search-form");
+    if (searchForm) {
+        searchForm.addEventListener("submit", handleSearch);
     }
 
     // Mobile navbar collapses after clicking a link
@@ -202,12 +238,4 @@ function init() {
 // Run init on page load
 document.addEventListener("DOMContentLoaded", init);
 
-const testArtwork = {
-    title: "Test Painting",
-    artist: "Test Artist",
-    date: "2020",
-    image: "https://picsum.photos/200",
-};
-const testCard = createCard(testArtwork);
-document.getElementById("results").appendChild(testCard);
-console.log("Test card created:");
+
