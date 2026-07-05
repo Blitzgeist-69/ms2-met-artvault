@@ -115,7 +115,10 @@ function createCard(artwork) {
     col.className = "col";
 
     col.innerHTML = `
-        <div class="card h-100 shadow-sm artwork-card" style="cursor: pointer;">
+        <div class="card h-100 shadow-sm artwork-card" style="cursor: pointer;"
+             tabindex="0" 
+             role="button"
+             aria-label="View details for ${artwork.title} by ${artwork.artist}">
             <img src="${artwork.image}" class="card-img-top" alt="${artwork.title}" 
                  style="height: 200px; object-fit: cover;"
                  onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
@@ -127,8 +130,18 @@ function createCard(artwork) {
     `;
 
     const cardElement = col.querySelector(".artwork-card");
+
+    // Click to open modal
     cardElement.addEventListener("click", () => {
         showArtworkModal(artwork);
+    });
+
+    // Keyboard accessibility: Enter key or space opens modal
+    cardElement.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            showArtworkModal(artwork);
+        }
     });
 
     return col;
