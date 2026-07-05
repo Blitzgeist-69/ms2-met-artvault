@@ -151,6 +151,8 @@ function createCard(artwork) {
 
 let currentArtwork = null;
 
+let currentView = "search"; // Track current view: "search" or "vault"
+
 function showArtworkModal(artwork) {
     currentArtwork = artwork;
 
@@ -161,6 +163,21 @@ function showArtworkModal(artwork) {
     document.getElementById("modal-date").textContent = artwork.date;
     document.getElementById("modal-medium").textContent = artwork.medium;
     document.getElementById("modal-department").textContent = artwork.department;
+
+    // Change button based on current view
+    const saveButton = document.getElementById("save-to-vault");
+
+    if (currentView === "vault") {
+        saveButton.textContent = "Remove from Art Vault";
+        saveButton.classList.remove("btn-accent");
+        saveButton.classList.add("btn-danger");
+        saveButton.onclick = removeFromVault;
+    } else {
+        saveButton.textContent = "Save to Art Vault";
+        saveButton.classList.remove("btn-danger");
+        saveButton.classList.add("btn-accent");
+        saveButton.onclick = saveCurrentArtworkToVault;
+    }   
 
     const modalElement = document.getElementById("artModal");
     const modal = new bootstrap.Modal(modalElement);
@@ -189,6 +206,32 @@ function saveCurrentArtworkToVault() {
     alert("Artwork saved to your Vault!");
 }
 
+// Remove artwork from vault
+
+function removeFromVault() {
+    if (!currentArtwork) return;
+
+    let vault = JSON.parse(localStorage.getItem("artvault")) || [];
+
+    // Remove the artwork from the array
+    vault = vault.filter(item => item.id !== currentArtwork.id);
+
+    // Update localStorage
+    localStorage.setItem("artvault", JSON.stringify(vault));
+
+    // Close modal
+    const modalElement = document.getElementById("artModal");
+    bootstrap.Modal.getInstance(modalElement).hide();
+
+    // Show feedback
+    alert("Artwork removed from your Vault!");
+
+    // Re-render the Art Vault view
+    if (currentView === "vault") {
+        showMyVault();
+    }
+}
+
 // Show About modal
 function showAboutModal() {
     const modalElement = document.getElementById("aboutModal");
@@ -199,6 +242,7 @@ function showAboutModal() {
 // Handle search form submission
 
 async function handleSearch(e) {
+    currentView = "search";
     e.preventDefault();
 
     const query = document.getElementById("search-input").value.trim();
@@ -227,6 +271,7 @@ async function handleSearch(e) {
 // Suprise Me! - Load a random artwork on page load
 
 async function showRandomArtwork() {
+    currentView = "search";
     const suggestions = [
         "van gogh",
         "rubens",
@@ -281,6 +326,7 @@ async function showRandomArtwork() {
 // Show saved artworks in vault
 
 function showMyVault() {
+    currentView = "vault"; // Update current view to "vault"
     const vault = JSON.parse(localStorage.getItem("artvault")) || [];
     const resultsContainer = document.getElementById("results");
 
@@ -304,6 +350,7 @@ function showMyVault() {
 // Reset to home view
 
 function resetToHome() {
+    currentView = "search";
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = "";
 
