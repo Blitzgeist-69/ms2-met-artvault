@@ -189,6 +189,13 @@ function saveCurrentArtworkToVault() {
     alert("Artwork saved to your Vault!");
 }
 
+// Show About modal
+function showAboutModal() {
+    const modalElement = document.getElementById("aboutModal");
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+}
+
 // Handle search form submission
 
 async function handleSearch(e) {
@@ -322,6 +329,15 @@ function init() {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", toggleDarkMode);
+    }
+
+    // Connect About button
+    const aboutLink = document.getElementById("about-link");
+    if (aboutLink) {
+        aboutLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            showAboutModal();
+        });
     }
 
     // Connect search form

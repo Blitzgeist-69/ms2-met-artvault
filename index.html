@@ -69,8 +69,10 @@
                         class="ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center border rounded px-3 py-2 mt-3 mt-lg-0 nav-links-box"
                     >
                         <a href="#" id="home-link" class="nav-link px-3 py-1 btn-accent">Home</a>
-                        <a href="#" id="art-vault-link" class="nav-link px-3 py-1 btn-accent">Art Vault</a>
-                        <a href="#" class="nav-link px-3 py-1 btn-accent">About</a>
+                        <a href="#" id="art-vault-link" class="nav-link px-3 py-1 btn-accent"
+                            >Art Vault</a
+                        >
+                        <a href="#" id="about-link" class="nav-link px-3 py-1 btn-accent">About</a>
 
                         <button
                             id="dark-mode-toggle"
@@ -118,8 +120,8 @@
         <main class="container py-5">
             <div id="results" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
                 <!-- Cards will be added here by JavaScript -->
-                <div class="col-12 text-center" id="placeholder">
-                    <p class="lead text-center">
+                <div class="col-12 text-center py-5" id="placeholder">
+                    <p class="lead mb-0">
                         Use the search bar or "Surprise Me!" to explore artworks.
                     </p>
                 </div>
@@ -149,9 +151,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button id="save-to-vault" class="btn btn-accent">
-                            Save to Art Vault
-                        </button>
+                        <button id="save-to-vault" class="btn btn-accent">Save to Art Vault</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Close
                         </button>
@@ -159,6 +159,84 @@
                 </div>
             </div>
         </div>
+
+        <!-- About Modal -->
+        <div
+            class="modal fade"
+            id="aboutModal"
+            tabindex="-1"
+            aria-labelledby="aboutModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="aboutModalLabel">About Met Art Vault</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <strong>Met Art Vault</strong> is an interactive web application that
+                            lets you explore the vast public collection of The Metropolitan Museum
+                            of Art.
+                        </p>
+
+                        <h6 class="mt-3">Purpose</h6>
+                        <p>
+                            The site was created to make it easy and enjoyable for anyone to
+                            discover, learn about, and save their favourite artworks from The Met's
+                            collection of over 470,000 pieces.
+                        </p>
+
+                        <h6 class="mt-3">How to Use the Site</h6>
+                        <ul>
+                            <li>
+                                <strong>Search</strong> - Type any keyword (artist, title, or
+                                subject) and press Enter or click the search icon.
+                            </li>
+                            <li>
+                                <strong>Surprise Me!</strong> - Click this button to discover random
+                                artworks from the collection.
+                            </li>
+                            <li>
+                                <strong>View Details</strong> - Click any artwork card to open a
+                                modal with more information (artist, date, medium, department).
+                            </li>
+                            <li>
+                                <strong>Save to Art Vault</strong> - Click “Save to Art Vault” in
+                                the modal to add artworks to your personal collection.
+                            </li>
+                            <li>
+                                <strong>View Your Vault</strong> - Click “Art Vault” in the
+                                navigation bar to see all the artworks you've saved.
+                            </li>
+                            <li>
+                                <strong>Dark Mode</strong> - Toggle between light and dark theme
+                                using the button in the navbar.
+                            </li>
+                        </ul>
+
+                        <p class="mt-3">
+                            <strong>Note:</strong> All saved artworks are stored locally in your
+                            browser using localStorage. They will not be saved if you clear your
+                            browser data or use a different device.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-accent" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS and Custom JS -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
             integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
