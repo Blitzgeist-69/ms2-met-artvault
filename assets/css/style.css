@@ -10,10 +10,10 @@
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
     --text-primary: #1e2937;
-    --text-secondary: #64748b;
+    --text-secondary: #475569;
     --accent: #d97706;
     --accent-hover: #b45309;
-    --border-color: #e2e8f0;
+    --border-color: #cbd5e1;
     --btn-text: #ffffff;
 }
 
@@ -22,7 +22,7 @@
     --bg-color: #0f172a;
     --card-bg: #1e2937;
     --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
+    --text-secondary: #cbd5e1;
     --accent: #f59e0b;
     --accent-hover: #d97706;
     --border-color: #334155;
@@ -124,3 +124,4 @@ h6 {
 .nav-links-box {
     border-color: var(--border-color);
 }
+
