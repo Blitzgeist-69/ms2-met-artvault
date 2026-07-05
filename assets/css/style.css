@@ -125,3 +125,56 @@ h6 {
     border-color: var(--border-color);
 }
 
+/* Keyboard focus styles for accessibility */
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+/* Buttons accent */
+.btn-accent:focus-visible {
+    background-color: var(--accent);
+    color: var(--btn-text);
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
+}
+
+/* Close button */
+.modal-footer .btn-secondary:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    background-color: #6c757d;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* X Close Button */
+.modal .btn-close:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+/* Navbar */
+.navbar .nav-link:focus-visible,
+.nav-links-box .nav-link:focus-visible,
+.nav-links-box button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Title */
+#logo:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* Remove Bootstrap focus shadow */
+.btn:focus {
+    box-shadow: none;
+}
+
