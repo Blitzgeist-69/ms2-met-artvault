@@ -150,12 +150,12 @@ function createCard(artwork) {
 // Show artwork details in a modal
 
 let currentArtwork = null;
-
-let currentView = "search"; // Track current view: "search" or "vault"
+let currentView = "search"; // Track the current view: "search" or "vault"
 
 function showArtworkModal(artwork) {
     currentArtwork = artwork;
 
+    // Populate modal content
     document.getElementById("modal-title").textContent = artwork.title;
     document.getElementById("modal-image").src = artwork.largeImage || artwork.image;
     document.getElementById("modal-image").alt = artwork.title;
@@ -166,13 +166,17 @@ function showArtworkModal(artwork) {
 
     // Change button based on current view
     const saveButton = document.getElementById("save-to-vault");
+    const vault = JSON.parse(localStorage.getItem("artvault")) || [];
+    const isAlreadySaved = vault.some((item) => item.id === artwork.id);
 
-    if (currentView === "vault") {
+    if (isAlreadySaved) {
+        // If the artwork is already saved, change button to "Remove from Art Vault"
         saveButton.textContent = "Remove from Art Vault";
         saveButton.classList.remove("btn-accent", "btn-secondary");
         saveButton.classList.add("btn-remove");
         saveButton.onclick = removeFromVault;
     } else {
+        // If the artwork is not saved, show "Save to Art Vault"
         saveButton.textContent = "Save to Art Vault";
         saveButton.classList.remove("btn-remove", "btn-secondary");
         saveButton.classList.add("btn-accent");
@@ -190,12 +194,6 @@ function saveCurrentArtworkToVault() {
     if (!currentArtwork) return;
 
     let vault = JSON.parse(localStorage.getItem("artvault")) || [];
-
-    const alreadyExists = vault.some((item) => item.id === currentArtwork.id);
-    if (alreadyExists) {
-        alert("This artwork is already in your Vault!");
-        return;
-    }
 
     vault.push(currentArtwork);
     localStorage.setItem("artvault", JSON.stringify(vault));
@@ -326,7 +324,7 @@ async function showRandomArtwork() {
 // Show saved artworks in vault
 
 function showMyVault() {
-    currentView = "vault"; // Update current view to "vault"
+    currentView = "vault";
     const vault = JSON.parse(localStorage.getItem("artvault")) || [];
     const resultsContainer = document.getElementById("results");
 
@@ -400,10 +398,10 @@ function init() {
     }
 
     // Connect Save to Vault button
-    const saveButton = document.getElementById("save-to-vault");
-    if (saveButton) {
-        saveButton.addEventListener("click", saveCurrentArtworkToVault);
-    }
+    // const saveButton = document.getElementById("save-to-vault");
+    // if (saveButton) {
+    //     saveButton.addEventListener("click", saveCurrentArtworkToVault);
+    // }
 
     // Connect vault button
     const artVaultLink = document.getElementById("art-vault-link");
