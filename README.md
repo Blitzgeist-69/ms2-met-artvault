@@ -160,13 +160,14 @@ The wireframes show:
 * As a user, I want to click on an artwork card to view more detailed information in a modal so that I can learn more about the piece.
 * As a user, I want the website to be fully responsive on mobile, tablet, and desktop devices so that I can comfortably use it on any screen size.
 * As a user, I want to view all the artworks I have saved in my personal Art Vault, so that I can easily browse and revisit my favourite pieces.
+* As a user, I want to click on the "About" link in the navigation bar to open a modal with information about the Met Art Vault website, so that I can understand the purpose of the site and what it offers.
 
 **Should Have**
 
 * As a user, I want to save artworks to my personal Art Vault and receive clear visual feedback so that I can build and revisit my own collection of favourite artworks.
 * As a user, I want to remove artworks from my Art Vault and receive clear visual feedback so that I can manage my saved collection effectively.
 * As a user, I want the option to switch to dark mode so that I can browse comfortably in low-light environments.
-* As a user, I want to click on the "About" link in the navigation bar to open a modal with information about the Met Art Vault website, so that I can understand the purpose of the site and what it offers.
+
 
 **Could Have**
 
