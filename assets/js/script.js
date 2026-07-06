@@ -38,6 +38,17 @@ function toggleDarkMode() {
 
 const BASE_URL = "https://collectionapi.metmuseum.org/public/collection/v1";
 
+// Fullscreen
+function toggleFullscreen(element) {
+    if (!document.fullscreenElement) {
+        element.requestFullscreen().catch(err => {
+            console.error(`Error enabling fullscreen: ${err.message}`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
+
 // Search for objects by query
 
 async function searchArtworks(query) {
@@ -163,6 +174,14 @@ function showArtworkModal(artwork) {
     document.getElementById("modal-date").textContent = artwork.date;
     document.getElementById("modal-medium").textContent = artwork.medium;
     document.getElementById("modal-department").textContent = artwork.department;
+
+    // Fullscreen button functionality
+    const modalImage = document.getElementById("modal-image");
+    modalImage.onclick = null; // Reset previous click handler
+    modalImage.onclick = () => { 
+        toggleFullscreen(modalImage);
+    };
+
 
     // Change button based on current view
     const saveButton = document.getElementById("save-to-vault");
@@ -397,12 +416,6 @@ function init() {
         randomBtn.addEventListener("click", showRandomArtwork);
     }
 
-    // Connect Save to Vault button
-    // const saveButton = document.getElementById("save-to-vault");
-    // if (saveButton) {
-    //     saveButton.addEventListener("click", saveCurrentArtworkToVault);
-    // }
-
     // Connect vault button
     const artVaultLink = document.getElementById("art-vault-link");
     if (artVaultLink) {
@@ -430,6 +443,20 @@ function init() {
             resetToHome();
         });
     }
+
+    const artModal = document.getElementById("artModal");
+
+    artModal.addEventListener("hidden.bs.modal", () => {
+        // Exit fullscreen
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+
+        // Remove focus from elements inside modal
+        if (document.activeElement && artModal.contains(document.activeElement)) {
+            document.activeElement.blur();
+        }
+    });
 
     // Mobile navbar collapses after clicking a link
     document
