@@ -382,10 +382,12 @@ function resetToHome() {
     resultsContainer.innerHTML = "";
 
     resultsContainer.innerHTML = `
-        <div class="col-12 text-center" id="placeholder">
-            <p class="lead text-center">
-                Use the search bar or "Surprise Me!" to explore artworks.
-            </p>
+        <div class="col-12 py-5" id="placeholder">
+            <div class="d-flex justify-content-center">
+                <p class="lead mb-0 text-center">
+                    Use the search bar or "Surprise Me!" to explore artworks.
+                </p>
+            </div>
         </div>
     `;
 

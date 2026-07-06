@@ -52,16 +52,6 @@ h6 {
     font-family: "Poppins", sans-serif;
 }
 
-/* Placeholder text centering */
-
-#placeholder {
-    text-align: center;
-}
-
-#placeholder p {
-    text-align: center;
-}
-
 /* Card styles */
 
 .card {
