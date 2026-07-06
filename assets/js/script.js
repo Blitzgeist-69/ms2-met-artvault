@@ -168,18 +168,20 @@ function showArtworkModal(artwork) {
 
     // Populate modal content
     document.getElementById("modal-title").textContent = artwork.title;
-    document.getElementById("modal-image").src = artwork.largeImage || artwork.image;
-    document.getElementById("modal-image").alt = `${artwork.title} by ${artwork.artist}`;
+
+    const modalImage = document.getElementById("modal-image");
+    modalImage.src = artwork.largeImage || artwork.image;
+    modalImage.alt = `${artwork.title} by ${artwork.artist}`;
+
     document.getElementById("modal-artist").textContent = artwork.artist;
     document.getElementById("modal-date").textContent = artwork.date;
     document.getElementById("modal-medium").textContent = artwork.medium;
     document.getElementById("modal-department").textContent = artwork.department;
 
-    // Fullscreen button functionality
-    const modalImage = document.getElementById("modal-image");
-    modalImage.onclick = null; // Reset previous click handler
+    // Fullscreen functionality - REUSE modalImage (do NOT declare it again)
+    modalImage.onclick = null;                    // Reset previous handler
     modalImage.onclick = () => { 
-        toggleFullscreen(modalImage);
+    toggleFullscreen(modalImage);
     };
 
 
