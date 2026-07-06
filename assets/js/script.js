@@ -132,7 +132,7 @@ function createCard(artwork) {
              aria-label="View details for ${artwork.title} by ${artwork.artist}">
             <img src="${artwork.image}" class="card-img-top" alt="${artwork.title}" 
                  style="height: 200px; object-fit: cover;"
-                 onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+                 onerror="this.src='https://placehold.co/300x200?text=No+Image'">
             <div class="card-body">
                 <h5 class="card-title">${artwork.title}</h5>
                 <p class="card-text">${artwork.artist} - ${artwork.date}</p>
@@ -218,6 +218,12 @@ function saveCurrentArtworkToVault() {
     localStorage.setItem("artvault", JSON.stringify(vault));
 
     const modalElement = document.getElementById("artModal");
+    
+    // Remove focus from button
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+    
     bootstrap.Modal.getInstance(modalElement).hide();
 
     alert("Artwork saved to your Vault!");
@@ -238,6 +244,10 @@ function removeFromVault() {
 
     // Close modal
     const modalElement = document.getElementById("artModal");
+    // Remove focus from button
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
     bootstrap.Modal.getInstance(modalElement).hide();
 
     // Show feedback
