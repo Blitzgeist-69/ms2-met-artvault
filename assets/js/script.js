@@ -169,12 +169,12 @@ function showArtworkModal(artwork) {
 
     if (currentView === "vault") {
         saveButton.textContent = "Remove from Art Vault";
-        saveButton.classList.remove("btn-accent");
-        saveButton.classList.add("btn-danger");
+        saveButton.classList.remove("btn-accent", "btn-secondary");
+        saveButton.classList.add("btn-remove");
         saveButton.onclick = removeFromVault;
     } else {
         saveButton.textContent = "Save to Art Vault";
-        saveButton.classList.remove("btn-danger");
+        saveButton.classList.remove("btn-remove", "btn-secondary");
         saveButton.classList.add("btn-accent");
         saveButton.onclick = saveCurrentArtworkToVault;
     }   

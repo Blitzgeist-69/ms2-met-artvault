@@ -15,6 +15,8 @@
     --accent-hover: #b45309;
     --border-color: #cbd5e1;
     --btn-text: #ffffff;
+    --remove: #9f1239;
+    --remove-hover: #7f1d1d;
 }
 
 [data-theme="dark"] {
@@ -27,6 +29,8 @@
     --accent-hover: #d97706;
     --border-color: #334155;
     --btn-text: #ffffff;
+    --remove: #b91c1c;
+    --remove-hover: #991b1b;
 }
 
 body {
@@ -188,3 +192,21 @@ h6 {
     box-shadow: none;
 }
 
+/* Remove button styles */
+.btn-remove {
+    background-color: var(--remove);
+    color: var(--btn-text);
+}
+
+.btn-remove:hover {
+    background-color: var(--remove-hover);
+    color: var(--btn-text);
+}
+
+.btn-remove:focus-visible {
+    background-color: var(--remove);
+    color: var(--btn-text);
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
+}
