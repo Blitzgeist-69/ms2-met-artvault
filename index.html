@@ -51,7 +51,16 @@
         <nav class="navbar navbar-expand-lg border-bottom py-3">
             <div class="container">
                 <!-- Logo -->
-                <a id="logo" class="navbar-brand fw-bold fs-4" href="#">Met Art Vault</a>
+                <!-- Logo -->
+                <a
+                    id="logo"
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2"
+                    href="#"
+                    aria-label="Met Art Vault - Go to homepage"
+                >
+                    <i class="fas fa-paintbrush" aria-hidden="true"></i>
+                    <span>Met Art Vault</span>
+                </a>
 
                 <!-- Hamburger -->
                 <button
@@ -97,16 +106,26 @@
                 <!-- Search and Surprise Me Button -->
                 <div class="d-flex justify-content-center align-items-center gap-2 mt-4">
                     <!-- Search Bar -->
-                    <form id="search-form" class="d-flex" style="max-width: 320px; width: 100%">
+                    <form id="search-form" class="d-flex" role="search">
                         <div class="input-group">
-                            <span class="input-group-text bg-white">
-                                <i class="fas fa-search"></i>
-                            </span>
+                            <button
+                                type="submit"
+                                class="input-group-text bg-white border-end-0"
+                                aria-label="Search artworks"
+                            >
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </button>
+
+                            <label for="search-input" class="visually-hidden"
+                                >Search artworks</label
+                            >
+
                             <input
                                 type="text"
                                 id="search-input"
-                                class="form-control"
-                                placeholder="search"
+                                class="form-control border-start-0"
+                                placeholder="Search artworks"
+                                aria-label="Search artworks"
                             />
                         </div>
                     </form>
@@ -134,13 +153,18 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">Artwork Name</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <h2 class="modal-title" id="modal-title">Artwork Name</h2>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <img id="modal-image" class="img-fluid rounded" alt="Artwork" />
+                                <img id="modal-image" class="img-fluid rounded" alt="" />
                             </div>
                             <div class="col-md-6">
                                 <p><strong>Artist:</strong> <span id="modal-artist"></span></p>
@@ -173,7 +197,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="aboutModalLabel">About Met Art Vault</h5>
+                        <h2 class="modal-title" id="aboutModalLabel">About Met Art Vault</h2>
                         <button
                             type="button"
                             class="btn-close"
@@ -188,15 +212,16 @@
                             of Art.
                         </p>
 
-                        <h6 class="mt-3">Purpose</h6>
+                        <h3 class="mt-3">Purpose</h3>
                         <p>
                             The site was created to make it easy and enjoyable for anyone to
                             discover, learn about, and save their favourite artworks from The Met's
                             collection of over 470,000 pieces.
                         </p>
 
-                        <h6 class="mt-3">How to Use the Site</h6>
+                        <h3 class="mt-3">How to Use the Site</h3>
                         <ul>
+                            <li>Clicking Met Art Vault will take you to the homepage and clear the search results.</li>
                             <li>
                                 <strong>Search</strong> - Type any keyword (artist, title, or
                                 subject) and press Enter or click the search icon.
