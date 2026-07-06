@@ -200,6 +200,7 @@ The wireframes show:
 * Notepad++
 * tabletomarkdown.com
 * Lorem Picsum - test image
+* placehold.io - image placeholder when image not loading
 
 
 ## Code and Media Attribution
